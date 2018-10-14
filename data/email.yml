@@ -1,0 +1,9 @@
+prod:
+  smtpHost: 'smtp.gmail.com'
+  port: 465
+  username: 'abc@gmail.com'
+  password: 'password'
+  from: abc@gmail.com'
+  to: 'xyz@gmail.com'
+  subject: 'SMS not sent'
+  message: 'SMS to phone number 21314561234 is not sent'

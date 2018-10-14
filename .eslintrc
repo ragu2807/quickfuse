@@ -1,0 +1,900 @@
+{
+  "parser": "babel-eslint",
+  "globals": {
+    "app": true,
+    "BASE_URL": true,
+    "ENVIRONMENT": true,
+    "expect": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "node": true,
+    "webdriverio/wdio": true
+  },
+  "plugins": [
+    "webdriverio"
+  ],
+  "rules": {
+    // Disallow the use of object property setters without corresponding
+    // getters. This helps prevent confusing code.
+    "accessor-pairs": 2,
+
+    // Disallow non-returning branches in Array methods such as `filter`. This
+    // helps prevent confusing code.
+    "array-callback-return": 2,
+
+    // Disallow references to variables in scopes higher than the one in which
+    // they are defined. This helps prevent confusing code.
+    "block-scoped-var": 2,
+
+    // Allow code of any cyclomatic complexity.
+    "complexity": 0,
+
+    // Disallow branches that do not return a value when related branches do.
+    // This helps make code consistent.
+    "consistent-return": 2,
+
+    // Disallow one-line blocks without curly braces. This helps make code
+    // consistent.
+    "curly": 2,
+
+    // Warn on switch statements without a default case. This helps ensure all
+    // code paths have been considered.
+    "default-case": 1,
+
+    // Disallow multiline member expressions in which the accessor operator is
+    // attached to the object rather than the property. This is a stylistic
+    // choice.
+    "dot-location": [
+      2,
+      "property"
+    ],
+
+    // Disallow unnecessary use of square bracket notation for property access.
+    // This is a stylistic choice.
+    "dot-notation": 2,
+
+    // Disallow the use of abstract equality comparison. This helps prevent
+    // unexpected behaviour.
+    "eqeqeq": 2,
+
+    // Disallow the use of for-in loops without guards. This helps prevent
+    // unexpected behaviour.
+    "guard-for-in": 2,
+
+    // Disallow the use of `alert`, `prompt` and `confirm`. This helps prevent
+    // erroneous debugging from reaching production and forces consideration of
+    // better UX patterns.
+    "no-alert": 2,
+
+    // Disallow the use of `arguments.callee` and `arguments.caller`. This helps
+    // prevent inefficient and brittle code.
+    "no-caller": 2,
+
+    // Disallow the use of lexical declarations in `case` clauses. This helps
+    // prevent confusing code.
+    "no-case-declarations": 2,
+
+    // Allow the use of regular expressions that "look like division".
+    "no-div-regex": 0,
+
+    // Disallow the use of return statements in `else` blocks following `if`
+    // blocks that also contain return statements. This helps prevent unncessary
+    // code.
+    "no-else-return": 2,
+
+    // Disallow the use of empty functions. This helps prevent unnecessary code.
+    "no-empty-function": 2,
+
+    // Disallow the use of empty destructuring patterns. This helps prevent
+    // common typos.
+    "no-empty-pattern": 2,
+
+    // Disallow the use of `eval`. This helps prevent dangerous code.
+    "no-eval": 2,
+
+    // Warn on expando properties of native object prototypes. This helps
+    // prevent dangerous code.
+    "no-extend-native": 1,
+
+    // Disallow unnecessary calls to `bind`. This helps prevent unnecessary
+    // code
+    "no-extra-bind": 2,
+
+    // Disallow unnecessary labels. This helps prevent confusing code.
+    "no-extra-label": 2,
+
+    // Disallow "accidental" fall-throughs in switch statements. This helps
+    // prevent common typos.
+    "no-fallthrough": 2,
+
+    // Disallow floating decimal points in numeric literals. This is a stylistic
+    // choice.
+    "no-floating-decimal": 2,
+
+    // Allow shorthand type coercion.
+    "no-implicit-coercion": 0,
+
+    // Disallow declarations in the global scope. This helps prevent dangerous
+    // code.
+    "no-implicit-globals": 2,
+
+    // Disallow implied calls to `eval` via `setTimeout` and similar. This helps
+    // prevent dangerous code.
+    "no-implied-eval": 2,
+
+    // Warn on uses of `this` in seemingly invalid contexts. This helps prevent
+    // confusing code.
+    "no-invalid-this": 1,
+
+    // Disallow the deprecated `__iterator__` property. This helps prevent
+    // confusing and brittle code.
+    "no-iterator": 2,
+
+    // Disallow labels when they do not apply to a loop or a switch statement.
+    // This helps prevent confusing code.
+    "no-labels": [
+      2,
+      {
+        "allowLoop": true,
+        "allowSwitch": true
+      }
+    ],
+
+    // Disallow block statements that do not contain block-scoped declarations.
+    // This helps prevent confusing code.
+    "no-lone-blocks": 2,
+
+    // Warn on function declarations or expressions within loops. This helps
+    // prevent potential bugs.
+    "no-loop-func": 1,
+
+    // It is not possible to configure this rule in a way that would work well
+    // for us so it is disabled currently.
+    "no-magic-numbers": 0,
+
+    // Disallow multiple consecutive spaces. This helps prevent messy code.
+    "no-multi-spaces": 2,
+
+    // Allow the use of multiline strings.
+    "no-multi-str": 0,
+
+    // Disallow the reassignment of native globals. This helps prevent confusing
+    // code.
+    "no-native-reassign": 2,
+
+    // Disallow the `Function` constructor. This helps prevent dangerous code.
+    "no-new-func": 2,
+
+    // Disallow primitive wrapper instances. This helps prevent confusing code.
+    "no-new-wrappers": 2,
+
+    // Warn on invocations with `new` that are not part of an assignment. This
+    // helps prevent confusing code.
+    "no-new": 1,
+
+    // Disallow deprecated octal escape sequences in strings. This helps prevent
+    // brittle code.
+    "no-octal-escape": 2,
+
+    // Warn on octal literals. This helps prevent common typos.
+    "no-octal": 1,
+
+    // Disallow reassignment of function parameters but allow assignment to
+    // properties of function parameter objects. This helps prevent confusing
+    // code.
+    "no-param-reassign": [
+      2,
+      {
+        "props": false
+      }
+    ],
+
+    // Disallow use of the deprecated `__proto__` property. This helps prevent
+    // non-standard code.
+    "no-proto": 2,
+
+    // Disallow multiple declarations with the same identifier in the same
+    // scope. This helps prevent confusing and dangerous code.
+    "no-redeclare": [
+      2,
+      {
+        "builtinGlobals": true
+      }
+    ],
+
+    // Disallow assignments in return statements. This helps prevent common
+    // typos.
+    "no-return-assign": 2,
+
+    // Disallow `javascript:` URLs. This helps prevent dangerous code.
+    "no-script-url": 2,
+
+    // Disallow self assignment. This helps prevent confusing or unnecessary
+    // code.
+    "no-self-assign": 2,
+
+    // Disallow self comparison. This helps prevent confusing or unnecessary
+    // code.
+    "no-self-compare": 2,
+
+    // Warn on comma operators. This helps prevent confusing or messy code.
+    "no-sequences": 1,
+
+    // Disallow throwing of literal values. This helps prevent confusing code.
+    "no-throw-literal": 2,
+
+    // Allow loops in which variables from the condition are not modified.
+    "no-unmodified-loop-condition": 0,
+
+    // Disallow unused expressions. This helps prevent confusing or unnecessary
+    // code.
+    //'no-unused-expressions': 2,
+
+    // Disallow unused labels. This helps prevent unnecessary code.
+    "no-unused-labels": 2,
+
+    // Disallow unnecessary uses of `call` and `apply`. This helps prevent
+    // confusing code.
+    "no-useless-call": 2,
+
+    // Disallow unnecessary string concatenation. This helps prevent confusing
+    // code.
+    "no-useless-concat": 2,
+
+    // Disallow unnecessary escape characters in strings. This helps prevent
+    // confusing code.
+    "no-useless-escape": 2,
+
+    // Allow the `void` operator.
+    "no-void": 0,
+
+    // Allow "warning" comments such as TODO.
+    "no-warning-comments": 0,
+
+    // Disallow `with` statements. This helps prevent dangerous and confusing
+    // code.
+    "no-with": 2,
+
+    // Disallow calls to `parseInt` that do not pass a radix parameter. This
+    // helps write consistent code.
+    "radix": 2,
+
+    // Disallow `var` declarations that are not at the top of their scope. This
+    // helps prevent confusing code.
+    "vars-on-top": 2,
+
+    // Disallow IIFEs that are not wrapped in parentheses. The invoking parens
+    // must appear inside the wrapping pair.
+    "wrap-iife": 2,
+
+    // Disallow "Yoda" conditions. This helps write consistent code.
+    "yoda": 2,
+
+    // Disallow the use of `console`. This is useful for ensuring erroneous
+    // debug messages don't make it into production.
+    "no-console": 2,
+
+    // Disallow the use of assignments in conditional statements unless the
+    // assignment expression is wrapped in parentheses. This helps catch common
+    // typos.
+    "no-cond-assign": 2,
+
+    // Disallow the use of constant expressions in conditionals. This helps to
+    // prevent unncessary code such as branches that can never execute.
+    "no-constant-condition": 2,
+
+    // Warn on use of control characters in regular expressions. If such a
+    // character is present it's likely to be a typo.
+    "no-control-regex": 1,
+
+    // Disallow the use of `debugger`. This is useful for ensuring development
+    // code does not make it into production.
+    "no-debugger": 2,
+
+    // Disallow the use of duplicate function parameter identifiers. This helps
+    // prevent common typos.
+    "no-dupe-args": 2,
+
+    // Disallow the use of duplicate object key identifiers. This helps prevent
+    // common typos.
+    "no-dupe-keys": 2,
+
+    // Disallow the use of duplicate case labels in switch statements. This
+    // helps prevent common typos.
+    "no-duplicate-case": 2,
+
+    // Disallow the use of empty character classes in regular expressions. This
+    // helps prevent common typos.
+    "no-empty-character-class": 2,
+
+    // Disallow empty block statements, including catch clauses. This helps
+    // prevent unnecessary code and ensures proper comments are added in the
+    // rare cases where empty blocks might be required.
+    "no-empty": 2,
+
+    // Disallow assignment to the exception parameter in catch clauses. This
+    // helps prevent dangerous code since such an assignment completely destroys
+    // the error object.
+    "no-ex-assign": 2,
+
+    // Disallow unnecessary casts to boolean values. This helps prevent
+    // unnecessary code.
+    "no-extra-boolean-cast": 2,
+
+    // Disallow the use of unnecessary parentheses except in cases where a
+    // return statement contains an assignment, or in nested binary expressions.
+    // This helps prevent unnecessary and unreadable code.
+    "no-extra-parens": [
+      2,
+      "all",
+      {
+        "nestedBinaryExpressions": false,
+        "returnAssign": false
+      }
+    ],
+
+    // Disallow the use of unnecessary semicolons. This helps prevent
+    // unnecessary and unreadable code.
+    "no-extra-semi": 2,
+
+    // Disallow the reassignment of function declarations. This helps prevent
+    // common typos.
+    "no-func-assign": 2,
+
+    // Disallow function declarations in blocks. This helps prevent
+    // unpredictable code.
+    "no-inner-declarations": 2,
+
+    // Disallow invalid regular expressions in RegExp constructor arguments.
+    // This helps prevent runtime syntax errors.
+    "no-invalid-regexp": 2,
+
+    // Disallow unusual whitespace characters such as non-breaking spaces
+    // everywhere, including inside string and template literals. This helps
+    // prevent typos and unexpected effects.
+    "no-irregular-whitespace": [
+      2,
+      {
+        "skipStrings": false
+      }
+    ],
+
+    // Disallow the negation of the left-hand-side operand of an `in`
+    // expression. This helps prevent common typos.
+    "no-negated-in-lhs": 2,
+
+    // Disallow invocations of global object properties such as Math. This helps
+    // prevent common typos.
+    "no-obj-calls": 2,
+
+    // Warn on use of Object.prototype built-ins directly on objects. This helps
+    // prevent fragile code.
+    "no-prototype-builtins": 1,
+
+    // Disallow the use of multiple spaces in regular expressions. This helps
+    // prevent unreadable code.
+    "no-regex-spaces": 2,
+
+    // Disallow the use of sparse arrays. This helps prevent common typos.
+    "no-sparse-arrays": 2,
+
+    // Disallow confusing multiline expressions. This helps prevent unreadable
+    // code.
+    "no-unexpected-multiline": 2,
+
+    // Disallow unreachable code following e.g. return statements. This helps
+    // prevent unnecessary code.
+    "no-unreachable": 2,
+
+    // Warn about the use of control flow statements in `finally` blocks. This
+    // helps prevent confusing code.
+    "no-unsafe-finally": 1,
+
+    // Disallow comparisons to NaN that do not use `Number.isNaN` or the global
+    // `isNaN`. This helps prevent confusing code.
+    "use-isnan": 2,
+
+    // Warn on use of an unusual comparison value following a `typeof` operator.
+    // This helps prevent common typos.
+    "valid-typeof": 1,
+
+     // Disallow curly braces around arrow function bodies when they can be
+    // omitted.
+    "arrow-body-style": 2,
+
+    // Disallow un-parenthesised arrow function parameters.
+    "arrow-parens": 2,
+
+    // Require spaces around the arrow of an arrow function.
+    "arrow-spacing": 2,
+
+    // Verify calls to `super` within constructor functions. This helps prevent
+    // runtime errors.
+    "constructor-super": 2,
+
+    // Disallow spaces before the * in a generator function signature and
+    // require a space following the *.
+    "generator-star-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+
+    // Disallow assignment to an identifier previously used to declare a class.
+    // This helps prevent confusing code.
+    "no-class-assign": 2,
+
+    // Allow "confusing" arrow functions. Since parentheses are enforced this
+    // rule adds no value.
+    "no-confusing-arrow": 0,
+
+    // Disallow assignment to an identifier previously used to declare a const.
+    // This helps prevent confusing and broken code.
+    "no-const-assign": 2,
+
+    // Disallow class members with identical names. This helps prevent
+    // confusing code.
+    "no-dupe-class-members": 2,
+
+    // Disallow multiple import statements referencing the same module.
+    "no-duplicate-imports": 2,
+
+    // Disallow calls to `Symbol` preceded by the `new` operator. This helps
+    // prevent broken code.
+    "no-new-symbol": 2,
+
+    // Don't blacklist any particular modules from import.
+    "no-restricted-imports": 0,
+
+    // Disallow references to `this` before a call to `super` in constructor
+    // functions. This helps prevent broken code.
+    "no-this-before-super": 2,
+
+    // Disallow unnecessary property identifier computation. This helps prevent
+    // unnecessary code.
+    "no-useless-computed-key": 2,
+
+    // Disallow unnecessary constructors in class definitions. This helps
+    // prevent unnecessary code.
+    "no-useless-constructor": 2,
+
+    // Disallow import and export renames that do not change the name. This
+    // helps prevent unnecessary code.
+    "no-useless-rename": 2,
+
+    // Disallow the use of `var`.
+    "no-var": 2,
+
+    // Require object shorthand syntax where possible.
+    "object-shorthand": 2,
+
+    // Prefer arrow function callbacks unless the function expression is named.
+    "prefer-arrow-callback": [
+      2,
+      {
+        "allowNamedFunctions": true
+      }
+    ],
+
+    // Require `const` for variables that are nver reassigned. This helps
+    // prevent confusing code.
+    "prefer-const": 2,
+
+    // Require `Reflect` methods where appropriate. This helps prevent obsolete
+    // code.
+    "prefer-reflect": 2,
+
+    // Disallow references to `arguments` where rest/spread can be used. This
+    // helps prevent dangerous code.
+    "prefer-rest-params": 2,
+
+    // Disallow `Function.prototype.apply` when it would be possible to use the
+    // spread operator.
+    "prefer-spread": 2,
+
+    // Disallow string concatentation when it would be possible to use a
+    // template literal.
+    "prefer-template": 2,
+
+    // Disallow generator functions that do not contain a `yield` statement.
+    "require-yield": 2,
+
+    // Disallow spaces following spread operators.
+    "rest-spread-spacing": 2,
+
+    // Don't require alphabetical sorting of imports.
+    "sort-imports": 0,
+
+    // Disallow spaces inside curly braces within template literals.
+    "template-curly-spacing": 2,
+
+    // Disallow spaces before the * in a `yield*` expression and require a
+    // space following the *.
+    "yield-star-spacing": 2,
+
+    // Allow callbacks in branches that are not part of a return statement. This
+    // rule is not robust enough to enable by default.
+    "callback-return": 0,
+
+    // Warn on non-global calls to `require`. This helps prevent inconsistent
+    // code.
+    "global-require": 1,
+
+    // Allow the first callback parameter to be ignored. This rule is not robust
+    // enough to enable by default.
+    "handle-callback-err": 0,
+
+    // Ensure imports are grouped in a sensible manner. This helps ensure code
+    // is consistent.
+    "no-mixed-requires": 2,
+
+    // Disallow invocations of `require` with the `new` operator. This helps
+    // prevent common mistakes.
+    "no-new-require": 2,
+
+    // Disallow string concatenation of `__dirname` and similar. This helps
+    // prevent unportable and brittle code.
+    "no-path-concat": 2,
+
+    // Allow `process.env`.
+    "no-process-env": 0,
+
+    // Allow `process.exit()`.
+    "no-process-exit": 0,
+
+    // Don't restrict any modules.
+    "no-restricted-modules": 0,
+
+    // Allow synchronous methods.
+    "no-sync": 0,
+
+    // Disallow spaces inside square brackets.
+    "array-bracket-spacing": 2,
+
+    // Require spaces inside single line blocks.
+    "block-spacing": 2,
+
+    // Require "one true brace style".
+    "brace-style": 2,
+
+    // Require camelcase identifiers.
+    "camelcase": 2,
+
+    // Require a space following a comma and disallow spaces preceding commas.
+    "comma-spacing": 2,
+
+    // Require commas at the end of lines rather than the start in multiline
+    // object and array literals.
+    "comma-style": 2,
+
+    // Disallow spaces inside computed property square brackets.
+    "computed-property-spacing": 2,
+
+    // Don't enforce the identifier when assigning a reference to `this`.
+    "consistent-this": 0,
+
+    // Require a newline at the end of a file.
+    "eol-last": 2,
+
+    // Require a name for function expressions.
+    "func-names": 2,
+
+    // Don't enforce a single function style (declaration or expression).
+    "func-style": 0,
+
+    // Don't blacklist any identifiers.
+    "id-blacklist": 0,
+
+    // Don't enforce a minimum or maximum identifier length.
+    "id-length": 0,
+
+    // Don't force identifiers to match a given regular expression.
+    "id-match": 0,
+
+    // Require 2-space indentation.
+    "indent": [
+      2,
+      2
+    ],
+
+    // Require double quotes around JSX attributes.
+    "jsx-quotes": 2,
+
+    // Require a space following a colon in object literals and disallow spaces
+    // before colons in object literals.
+    "key-spacing": 2,
+
+    // Require a space before and after a keyword.
+    "keyword-spacing": 2,
+
+    // Require Unix-style line endings.
+    "linebreak-style": 2,
+
+    // Require a blank line before a comment unless the comment appears on the
+    // first line of a block.
+    "lines-around-comment": [
+      2,
+      {
+        "beforeBlockComment": true,
+        "beforeLineComment": true,
+        "allowBlockStart": true,
+        "allowObjectStart": true,
+        "allowArrayStart": true
+      }
+    ],
+
+    // Don't enforce a maximum level of nested blocks.
+    "max-depth": 0,
+
+    // Require most lines to be a maximum of 120 characters long.
+    "max-len": [
+      2,
+      {
+        "code": 120,
+        "ignoreUrls": true,
+        "ignoreTrailingComments": true
+      }
+    ],
+
+    // Don't enforce a maximum number of lines per file.
+    "max-lines": 0,
+
+    // Don't enforce a maximum level of nested callback functions.
+    "max-nested-callbacks": 0,
+
+    // Don't enforce a maximum number of function parameters.
+    "max-params": 0,
+
+    // Don't enforce a maximum number of statements per line.
+    "max-statements-per-line": 0,
+
+    // Don't enforce conditional statements to be spread over multiple lines.
+    "multiline-ternary": 0,
+
+    // Require invocations of a function whose identifier begins with an
+    // uppercase character to be preceded by the `new` keyword, and vice versa.
+    "new-cap": 2,
+
+    // Require parentheses when invoking a constructor.
+    "new-parens": 2,
+
+    // Require a blank line following a group of variable declarations.
+    "newline-after-var": 2,
+
+    // Require a blank line preceding a `return` statement.
+    "newline-before-return": 2,
+
+    // Require chained property accessors to be on separate lines after a
+    // maximum of 2. This is a warning and not an error to allow developer
+    // discretion.
+    "newline-per-chained-call": 1,
+
+    // Disallow the `Array` constructor except when it is passed a value.
+    "no-array-constructor": 2,
+
+    // Allow bitwise operators.
+    "no-bitwise": 0,
+
+    // Allow `continue` statements.
+    "no-continue": 0,
+
+    // Allow comments on the same line as code.
+    "no-inline-comments": 0,
+
+    // Disallow `if` statements when they are the only statement within an
+    // `else` block.
+    "no-lonely-if": 2,
+
+    // Disallow expressions containing unparenthesised groups of mixed boolean
+    // operators.
+    "no-mixed-operators": 2,
+
+    // Disallow mixed spaces and tabs.
+    "no-mixed-spaces-and-tabs": 2,
+
+    // Disallow multiple consecutive blank lines.
+    "no-multiple-empty-lines": 2,
+
+    // Allow negated conditions.
+    "no-negated-condition": 0,
+
+    // Disallow nested conditional expressions.
+    "no-nested-ternary": 2,
+
+    // Disallow the `Object` constructor.
+    "no-new-object": 2,
+
+    // Allow the unary increment and decrement operators.
+    "no-plusplus": 0,
+
+    // Don't restrict any particular syntax. Some elements, such as `with`, are
+    // restricted by other rules.
+    "no-restricted-syntax": 0,
+
+    // Disallow spaces between a function identifier and invoking parentheses.
+    "no-spaced-func": 2,
+
+    // Disallow tabs.
+    "no-tabs": 2,
+
+    // Allow conditional operators.
+    "no-ternary": 0,
+
+    // Disallow trailing whitespace.
+    "no-trailing-spaces": 2,
+
+    // Disallow dangling underscores in identifiers.
+    "no-underscore-dangle": 2,
+
+    // Disallow unnecessary conditional operators.
+    "no-unneeded-ternary": [
+      2,
+      {
+        "defaultAssignment": false
+      }
+    ],
+
+    // Disallow whitespace between property accessors, except when the accessor
+    // appears on a new line.
+    "no-whitespace-before-property": 2,
+
+    // Don't require newlines after the opening curly brace of an object
+    // literal. This rule is not currently configurable to a level that would
+    // work for us so developer discretion can be used in this situation for
+    // now.
+    "object-curly-newline": 0,
+
+    // Require spaces inside the curly braces of object literals, destructuring
+    // patterns and imports/exports.
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+
+    // Require newlines between object properties, unless all properties appear
+    // on the same line.
+    "object-property-newline": [
+      2,
+      {
+        "allowMultiplePropertiesPerLine": true
+      }
+    ],
+
+    // Disallow multiple variable declarations on a single line.
+    "one-var-declaration-per-line": [
+      2,
+      "always"
+    ],
+
+    // Disallow multiple variable declarations per statement.
+    "one-var": [
+      2,
+      "never"
+    ],
+
+    // Require shorthand assignment operators where possible.
+    "operator-assignment": 2,
+
+    // Require linebreaks to appear after operators rather than before.
+    "operator-linebreak": [
+      2,
+      "after"
+    ],
+
+    // Disallow blank lines padding blocks.
+    "padded-blocks": [
+      2,
+      "never"
+    ],
+
+    // Disallow unnecessary quotes around object property identifiers.
+    "quote-props": [
+      2,
+      "as-needed"
+    ],
+
+    // Require single quotes.
+    "quotes": [
+      2,
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+
+    // Do not require JSDoc comments on every function.
+    "require-jsdoc": 0,
+
+    // Disallow spaces before semicolons and require a space following a
+    // semicolon.
+    "semi-spacing": 2,
+
+    // Disallow the use of automatic semicolon insertion.
+    "semi": 2,
+
+    // Don't require alphabetical sorting of variable identifiers in declaration
+    // lists.
+    "sort-vars": 0,
+
+    // Disallow blocks without a preceding blank line.
+    "space-before-blocks": 2,
+
+    // Disallow spaces between function identifiers and the opening parenthesis
+    // of the parameter list. Require spaces between the `function` keyword and
+    // that parenthesis when no identifier is present.
+    "space-before-function-paren": [
+      2,
+      {
+        "anonymous": "always",
+        "named": "never"
+      }
+    ],
+
+    // Disallow spaces inside parentheses.
+    "space-in-parens": 2,
+
+    // Require spaces around infix operators.
+    "space-infix-ops": 2,
+
+    // Disallow spaces following appropriate unary operators.
+    "space-unary-ops": 2,
+
+    // Require a space following the start of a comment.
+    "spaced-comment": 2,
+
+    // Disallow unicode byte order mark.
+    "unicode-bom": 2,
+
+    // Do not require regular expression literals to be wrapped in parentheses.
+    "wrap-regex": 0,
+
+    // Allow variable declarations to be initialised anywhere.
+    "init-declarations": 0,
+
+    // Disallow catch parameter identifiers that would shadow a variable in an
+    // outer scope. This helps prevent dangerous code.
+    "no-catch-shadow": 2,
+
+    // Disallow use of the `delete` operator when the operand is a variable.
+    // This helps prevent confusing code.
+    "no-delete-var": 2,
+
+    // Disallow labels that share a name with a variable. This helps prevent
+    // confusing code.
+    "no-label-var": 2,
+
+    // Don't disallow any particular global objects.
+    "no-restricted-globals": 0,
+
+    // Disallow shadowing of restricted names such as `arguments`. This helps
+    // prevent confusing or dangerous code.
+    "no-shadow-restricted-names": 2,
+
+    // Disallow shadowing of variables in outer scopes. This helps prevent
+    // confusing code.
+    "no-shadow": 2,
+
+    // Disallow initialisation of variables to `undefined`. This helps prevent
+    // unncessary code.
+    "no-undef-init": 2,
+
+    // Disallow references to undeclared variables. This helps prevent dangerous
+    // code.
+    "no-undef": 2,
+
+    // Allow use of the `undefined` value.
+    "no-undefined": 0,
+
+    // Disallow unused variables. This helps prevent unnecessary code.
+    "no-unused-vars": 2,
+
+    // Disallow use of variables before they are declared. This helps prevent
+    // confusing code.
+    "no-use-before-define": 2
+  }
+}
